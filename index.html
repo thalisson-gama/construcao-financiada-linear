@@ -58,7 +58,7 @@
        RESET & BASE
     ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-main);
       font-size: 16px;
@@ -460,6 +460,17 @@
       border-radius: 40px;
       padding: 6px 28px;
       letter-spacing: 1px;
+      animation: installment-glow 3s ease-in-out infinite;
+    }
+    @keyframes installment-glow {
+      0%, 100% { border-color: rgba(255,255,255,0.4); box-shadow: none; }
+      50% { border-color: var(--red-light); box-shadow: 0 0 18px rgba(229,57,53,0.3); }
+    }
+    .card-total {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.5px;
+      margin-top: 4px;
     }
     .examples-note {
       font-size: 12px;
@@ -1000,6 +1011,9 @@
       .btn { padding: 14px 28px; font-size: 13px; }
       .mobile-cta { display: block; }
       .whatsapp-float { bottom: 88px; }
+      .carousel-prev { left: 8px; }
+      .carousel-next { right: 8px; }
+      .carousel-wrapper { padding: 0 16px; }
     }
     @media (max-width: 680px) {
       .hero { min-height: auto; padding: 48px 16px 36px; }
@@ -1201,8 +1215,9 @@
             </div>
           </div>
           <div class="card-footer">
-            <span class="footer-label">Investimento total</span>
-            <span class="card-installment">R$ 320 mil</span>
+            <span class="footer-label">Parcela</span>
+            <span class="card-installment">R$ 2.800/mês</span>
+            <span class="card-total">Valor total: R$ 320 mil</span>
           </div>
         </article>
 
@@ -1235,8 +1250,9 @@
             </div>
           </div>
           <div class="card-footer">
-            <span class="footer-label">Investimento total</span>
-            <span class="card-installment">R$ 480 mil</span>
+            <span class="footer-label">Parcela</span>
+            <span class="card-installment">R$ 4.200/mês</span>
+            <span class="card-total">Valor total: R$ 480 mil</span>
           </div>
         </article>
 
@@ -1269,14 +1285,15 @@
             </div>
           </div>
           <div class="card-footer">
-            <span class="footer-label">Investimento total</span>
-            <span class="card-installment">R$ 220 mil</span>
+            <span class="footer-label">Parcela</span>
+            <span class="card-installment">R$ 1.900/mês</span>
+            <span class="card-total">Valor total: R$ 220 mil</span>
           </div>
         </article>
 
       </div>
 
-      <p class="examples-note">* Dados ilustrativos baseados em projetos reais. Valores, prazos e condições variam conforme projeto, financiamento e localização.</p>
+      <p class="examples-note">* Parcelas e condições de financiamento variam conforme análise de crédito, banco e perfil de cada cliente.</p>
 
       <a href="#formulario" class="btn btn-green">Quero um orçamento para minha casa</a>
     </div>
