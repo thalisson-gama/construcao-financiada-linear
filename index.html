@@ -115,10 +115,10 @@
       cursor: pointer;
       transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
-    .btn:active { transform: translateY(0); }
-    .btn-green  { background: linear-gradient(135deg, #1E2A5E 0%, #C62828 100%);  color: var(--white); }
-    .btn-green:hover { background: linear-gradient(135deg, #141E3C 0%, #9B1B1B 100%); }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(198, 40, 40, 0.35); }
+    .btn:active { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(198, 40, 40, 0.2); }
+    .btn-green  { background: linear-gradient(135deg, #E53935 0%, #B71C1C 100%); color: var(--white); }
+    .btn-green:hover { background: linear-gradient(135deg, #D32F2F 0%, #9B1B1B 100%); }
     .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
     .btn-outline:hover { background: var(--white); color: var(--black); }
 
@@ -664,6 +664,44 @@
     .security-badge span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
 
     /* ============================================================
+       CLIENTES E PARCEIROS
+    ============================================================ */
+    .partners {
+      padding: 80px 20px;
+      background: var(--white);
+      text-align: center;
+    }
+    .partners .section-title { color: var(--black); }
+    .partners .section-subtitle { color: #555; margin: 14px auto 44px; }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 28px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+      justify-items: center;
+    }
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      padding: 8px;
+      opacity: 0.7;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+    .partner-logo:hover {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+    .partner-logo img {
+      max-height: 48px;
+      max-width: 110px;
+      object-fit: contain;
+    }
+
+    /* ============================================================
        FAQ ACCORDION
     ============================================================ */
     .faq {
@@ -837,7 +875,8 @@
     }
     .form-group input::placeholder { color: #aaa; font-weight: 400; }
     .form-group input:focus,
-    .form-group select:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(198,40,40,0.2); }
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--red); box-shadow: 0 0 0 4px rgba(198,40,40,0.15); }
     .form-group input.error { border-color: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,0.15); }
     .error-msg {
       font-size: 12px;
@@ -987,7 +1026,7 @@
        RESPONSIVO
     ============================================================ */
     @media (max-width: 900px) {
-      .hero { padding: 60px 16px; }
+      .hero { padding: 60px 20px; }
       .hero-logo { width: 170px; margin-bottom: 20px; }
       .hero-eyebrow { font-size: 10px; letter-spacing: 2.5px; margin-bottom: 14px; }
       .hero-headline { margin-bottom: 16px; }
@@ -996,8 +1035,8 @@
       .social-proof { gap: 16px; margin-top: 32px; padding-top: 24px; }
       .proof-number { font-size: 18px; }
       .proof-label { font-size: 10px; }
-      .how, .gallery, .testimonials, .faq, .examples, .timeline { padding: 60px 16px; }
-      .form-section { padding: 60px 16px; }
+      .how, .gallery, .testimonials, .faq, .examples, .timeline { padding: 60px 20px; }
+      .form-section { padding: 60px 20px; }
       .benefits { grid-template-columns: 1fr; }
       .benefit-col { padding: 44px 24px; }
       .examples-grid { grid-template-columns: 1fr; max-width: 420px; }
@@ -1014,15 +1053,17 @@
       .carousel-prev { left: 8px; }
       .carousel-next { right: 8px; }
       .carousel-wrapper { padding: 0 16px; }
+      .partners { padding: 60px 20px; }
+      .partners-grid { grid-template-columns: repeat(4, 1fr); gap: 24px 16px; }
     }
     @media (max-width: 680px) {
-      .hero { min-height: auto; padding: 48px 16px 36px; }
+      .hero { min-height: auto; padding: 48px 20px 36px; }
       .hero-logo { width: 150px; margin-bottom: 16px; }
       .hero-eyebrow { font-size: 9px; letter-spacing: 2px; margin-bottom: 12px; }
       .hero-headline { font-size: clamp(24px, 7vw, 36px); }
       .hero-subheadline { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
       .hero-scroll { display: none; }
-      .social-proof { flex-direction: column; align-items: center; gap: 14px; }
+      .social-proof { flex-direction: column; align-items: center; gap: 24px; }
       .carousel-slide { flex: 0 0 calc(100%); }
       .carousel-prev { left: 8px; }
       .carousel-next { right: 8px; }
@@ -1033,6 +1074,8 @@
       .card-installment { font-size: 22px; padding: 5px 20px; }
       .benefit-text { font-size: clamp(18px, 4vw, 24px); }
       .timeline-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 20px 12px; }
+      .partner-logo img { max-height: 36px; max-width: 90px; }
       footer { padding: 48px 16px 36px; }
     }
   </style>
@@ -1331,39 +1374,7 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       6. DEPOIMENTOS
-  ============================================================ -->
-  <section class="testimonials fade-in">
-    <div class="container">
-      <p class="section-label">Quem já construiu com a gente</p>
-      <h2 class="section-title">Histórias de quem realizou o sonho</h2>
 
-      <div class="testimonials-grid">
-
-        <article class="testimonial-card">
-          <div class="testimonial-body">
-            <h3 class="testimonial-name">Camila e Rafael</h3>
-            <p class="testimonial-role">Construção financiada  - Caixa</p>
-            <p class="testimonial-quote">
-              A gente tinha medo de começar e não conseguir terminar. A Linear montou um cronograma que cabia no nosso financiamento e entregou tudo no prazo. Hoje a gente mora na nossa casa sem dívida extra.
-            </p>
-          </div>
-        </article>
-
-        <article class="testimonial-card">
-          <div class="testimonial-body">
-            <h3 class="testimonial-name">Juliana e Mariana</h3>
-            <p class="testimonial-role">Construção financiada  - Banco do Brasil</p>
-            <p class="testimonial-quote">
-              O que mais valorizamos foi a transparência. Cada medição, cada etapa, tudo foi apresentado antes de executar. Nunca tivemos surpresa no orçamento e a casa ficou exatamente como no projeto.
-            </p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================================
        7. GARANTIMOS SEGURANÇA
@@ -1391,6 +1402,34 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ============================================================
+       CLIENTES E PARCEIROS
+  ============================================================ -->
+  <section class="partners fade-in">
+    <div class="container">
+      <p class="section-label">Quem confia na Linear</p>
+      <h2 class="section-title">Clientes e Parceiros</h2>
+      <p class="section-subtitle">Empresas e instituições que já contaram com nossos serviços de engenharia.</p>
+
+      <div class="partners-grid">
+        <div class="partner-logo"><img src="assets/parceiros/neoenergia.png" alt="Neoenergia" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/energisa.png" alt="Energisa" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/raizen.png" alt="Raízen" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/enel.png" alt="Enel" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/sabesp.png" alt="Sabesp" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/celesc.png" alt="Celesc" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/cart.png" alt="CART" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/cobra-brasil.png" alt="Cobra Brasil" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/novaamerica.png" alt="Novamérica" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/enersugar.png" alt="Enersugar" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/wiecheteck.png" alt="Wiecheteck Construções" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/rm2-engenharia.png" alt="RM2 Engenharia" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/saae.png" alt="SAAE" loading="lazy" /></div>
+        <div class="partner-logo"><img src="assets/parceiros/prefeitura-assis.png" alt="Prefeitura de Assis" loading="lazy" /></div>
+      </div>
+    </div>
   </section>
 
   <!-- ============================================================
